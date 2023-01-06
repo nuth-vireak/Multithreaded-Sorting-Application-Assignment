@@ -1,36 +1,18 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class SortingThread1 extends Thread {
 
-    // using ArrayList
-    private ArrayList<Integer> array;
-    private int start;
-    private int end;
+    public ArrayList<Integer> array1;
 
-    public SortingThread1(ArrayList<Integer> array, int start, int end) {
-        this.array = array;
-        this.start = start;
-        this.end = end;
+    public SortingThread1(ArrayList<Integer> array1) {
+        this.array1 = array1;
+        BubbleSort.bubbleSort(array1);
+        System.out.println("Array 1 after sorting: " + array1.toString());
     }
 
+    @Override
     public void run() {
-        bubbleSort(array, start, end);
-    }
-
-    private void bubbleSort(ArrayList<Integer> array, int start, int end) {
-        for (int i = start; i < end; i++) {
-            for (int j = start; j < end - 1; j++) {
-                if (array.get(j) > array.get(j + 1)) {
-                    int temp = array.get(j);
-                    array.set(j, array.get(j + 1));
-                    array.set(j + 1, temp);
-                }
-            }
-        }
-    }
-
-    public String getArray() {
-        return array.toString();
+        super.run();
     }
 }
-
