@@ -11,7 +11,7 @@ public class Main {
         System.out.println("------ Multi Thread Sorting ------");
         System.out.println("----------------------------------");
 
-        // Input random array
+        // Input random array as
         System.out.print("Enter array size: ");
         int size = input.nextInt();
 
